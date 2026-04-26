@@ -36,7 +36,8 @@ install(TARGETS imgui
 )
 
 install(FILES 
-    imgui.h 
+    imgui.h
+    imconfig.h 
     imgui_internal.h
     imstb_rectpack.h 
     imstb_textedit.h
