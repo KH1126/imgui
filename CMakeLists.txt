@@ -3,6 +3,10 @@ project(imgui_lib VERSION 1.92.7)
 
 include(GNUInstallDirs)
 
+find_package(OpenGL REQUIRED)
+find_package(SDL2 REQUIRED)
+
+
 set(IMGUI_SRCS
     imgui.cpp 
     imgui_draw.cpp 
