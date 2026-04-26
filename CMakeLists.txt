@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.10)
+# ImGUI use tag v1.92.7-docking
 project(imgui_lib VERSION 1.92.7)
 
 include(GNUInstallDirs)
 
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
-
 
 set(IMGUI_SRCS
     imgui.cpp 
@@ -19,6 +19,10 @@ set(IMGUI_SRCS
 
 add_library(imgui SHARED ${IMGUI_SRCS})
 
+target_link_libraries(imgui PUBLIC 
+    SDL2::SDL2
+    OpenGL::GL
+)
 
 target_include_directories(imgui PUBLIC 
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
